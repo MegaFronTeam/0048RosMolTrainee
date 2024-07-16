@@ -14,20 +14,28 @@
 	li{
 		
 		// margin-left: 0;
-		// margin-right: 0;
+		
 		padding: 0;
 	}
-	a{
+	a {
+    font-size: rem(16);
 		display: block;
 		padding: rem(20) calc(var(--bs-gutter-x) / 2);
 	}
+  
+	@include media-breakpoint-up(xl) {
+    li {
+      margin-right: rem(36);
+    }
+
+  }
 }
 
 
 
 .toggle-menu-mobile {
 	--h: #{em(2)};
-	--color: #{$primary};
+	--color: #{$black};
 	--position: calc(var(--h) * 2);
 	&.on span {
 		--color: transparent;
