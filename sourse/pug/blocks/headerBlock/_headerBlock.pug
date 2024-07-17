@@ -2,10 +2,15 @@ mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 headerBlock ds dfsdfdsfsd
-				+icon('telegram')
-				+iconC('telegram')
-			.row
-						
+			+b.section-title
+				h2 #[span.span-1 Тренинги по обучению]<br>действующих предпринимателей наставничеству
+					| #[span.span-2 от]
+					+img('img/svg/rosmol.svg').img
+			ul
+				li Стань сертифицированным бизнес-наставником за 2 месяца или получи наставническую поддержку от опытного предпринимателя
+				li Финалисты станут участниками очного мероприятия в Москве с топовыми экспертами из сферы бизнеса
+			+e.btn.btn.btn-light(href='#') Подать заявку
+			+img('img/svg/header-bg.svg').abstract
+			+e.img-wrap
+				+img('img/headerBlock-bg.png').bg-picture
 	// end headerBlock

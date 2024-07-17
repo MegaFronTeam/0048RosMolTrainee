@@ -481,6 +481,26 @@ h1, h2, .h2 {
   --bs-btn-color: #fff;
   --bs-btn-bg: #{$black};
   --bs-btn-border-color: #{$black};
+  position: relative;
+  padding-right: rem(82);
+
+  &:after {
+    @include mt;
+    content: '';
+    position: absolute;
+    display: block;
+    width: rem(32);
+    height: rem(20);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    right: rem(22);
+
+    background-image: url("data:image/svg+xml,%3Csvg width='33' height='20' viewBox='0 0 33 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10H32M32 10L22.8571 1M32 10L22.8571 19' stroke='white' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: rem(30);
+    background-position: center;
+  }
   // --bs-btn-hover-color: #fff;
   // --bs-btn-hover-bg: #424649;
   // --bs-btn-hover-border-color: #373b3e;
@@ -498,6 +518,26 @@ h1, h2, .h2 {
   --bs-btn-color: #000;
   --bs-btn-bg: #{$white};
   --bs-btn-border-color: #{$white};
+  position: relative;
+  padding-right: rem(82);
+
+  &:after {
+    @include mt;
+    content: '';
+    position: absolute;
+    display: block;
+    width: rem(32);
+    height: rem(20);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    right: rem(22);
+
+    background-image: url("data:image/svg+xml,%3Csvg width='33' height='20' viewBox='0 0 33 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10H32M32 10L22.8571 1M32 10L22.8571 19' stroke='black' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: rem(30);
+    background-position: center;
+  }
   // --bs-btn-hover-color: #000;
   // --bs-btn-hover-bg: #d3d4d5;
   // --bs-btn-hover-border-color: #c6c7c8;
