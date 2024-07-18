@@ -26,25 +26,6 @@
     }
 	}
 
-  .pattern {
-    background-repeat: repeat-x;
-    height: 30px;
-    
-    max-width: rem(1240);
-    @include media-breakpoint-up(md) {
-      transform: translateX(-30px);
-    }
-  }
-
-  .pattern-vertical {
-    background-repeat: repeat-y;
-    width: 30px;
-    height: calc(100% + 70px );
-    transform: translateX(-40px);
-    position: absolute;
-    left: rem(-8);
-    top: 0;
-  }
 
   .bg {
     position: absolute;
@@ -143,3 +124,22 @@
   p {
     font-weight: 700;
 }
+
+  .pattern {
+    background-repeat: repeat-x;
+    height: 30px;
+    max-width: rem(1240);
+    @include media-breakpoint-up(md) {
+      transform: translateX(-30px);
+    }
+  }
+
+  .pattern-vertical {
+    background-repeat: repeat-y;
+    width: 30px;
+    height: calc(100% + 70px );
+    transform: translateX(-40px);
+    position: absolute;
+    left: rem(-8);
+    top: 0;
+  }
