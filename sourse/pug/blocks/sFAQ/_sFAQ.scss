@@ -1,0 +1,115 @@
+// start .sFAQ
+.sFAQ {
+	--sPT: #{rem(54)};
+	--sPB: #{rem(26)};
+	--sTPB: #{rem(26)};
+	@include media-breakpoint-up(lg) {
+		--sPT: #{rem(107)};
+		--sPB: #{rem(59)};
+		--sTPB: #{rem(58.4)};
+	}
+	&__row {
+		// --bs-gutter-x: #{rem()};
+		// --bs-gutter-y: #{rem()};
+	}
+
+	.dd-group {
+		border-radius: rem(15);
+		&__head {
+			padding: rem(34) rem(25);
+			padding-bottom: rem(30);
+			padding-right: rem(15);
+			text-transform: uppercase;
+			font-size: rem(16);
+			cursor: pointer;
+			color: $gray-700;
+			font-weight: 500;
+			line-height: 120%;
+			display: flex;
+			gap: rem(10);
+			justify-content: space-between;
+			align-items: center;
+			color: #000;
+			@include media-breakpoint-up(md) {
+				font-size: rem(25);
+			}
+			&:after {
+				@include mt;
+				content: "";
+				flex-shrink: 0;
+				display: inline-block;
+				width: rem(30);
+				height: rem(30);
+				background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='40' height='40' rx='20' fill='%23000000' /%3E%3Cpath d='M8 20H32' stroke='%23ffffff' stroke-width='2' /%3E%3Cpath d='M20 8L20 32' stroke='%23ffffff' stroke-width='2' /%3E%3C/svg%3E");
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;
+				margin-left: rem(4);
+				vertical-align: middle;
+				@include media-breakpoint-up(md) {
+					width: rem(40);
+					height: rem(40);
+				}
+			}
+		}
+		&__item {
+			background-color: #fff;
+			margin-bottom: rem(15);
+			border-radius: rem(25);
+			&:last-child {
+				margin-bottom: 0;
+			}
+			&.active {
+				.dd-group__head:after {
+					transform: rotate(135deg);
+				}
+			}
+		}
+		&__content {
+			color: $gray-700;
+			padding: rem(23) rem(44) rem(26) rem(25);
+			border-top: 1px solid #000;
+			color: #000;
+			ul {
+				list-style-type: none;
+				margin-bottom: 0;
+				li {
+					position: relative;
+					padding-left: rem(24);
+					color: #000;
+					font-size: rem(16);
+					&:before {
+						content: "";
+						position: absolute;
+						left: rem(10);
+						top: rem(11);
+						width: rem(4);
+						height: rem(4);
+						background-color: #000;
+						border-radius: 50%;
+					}
+				}
+			}
+		}
+
+		p {
+			margin-bottom: 0;
+			line-height: 120%;
+		}
+	}
+
+	@include media-breakpoint-up(xl) {
+	}
+	@include media-breakpoint-up(lg) {
+	}
+	@include media-breakpoint-up(md) {
+	}
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
+} // end.sQuestions

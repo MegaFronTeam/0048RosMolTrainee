@@ -2,8 +2,17 @@ mixin sContact()
 	// start sContact
 	+b.SECTION.sContact.section#sContact&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sContact
-				
+			.section-title
+				h2
+					+icon('arrow-down')
+					| Контакты
 			+e.row.row
+				.col-12.col-lg-6
+					+e.inner-content(href='https://vk.com/rosmolbizclub').border
+						+img('img/svg/contact-abstract.svg').abstract
+						.wrapper
+							+img(src='img/svg/vk.svg', alt="").vk
+							p Вконтакте
+				.col-12.col-lg-6
+					+img('img/contact.png').img
 	// end sContact
