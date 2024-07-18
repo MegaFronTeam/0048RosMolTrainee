@@ -1,0 +1,125 @@
+// start .sFeatures
+.sFeatures {
+	--sPT: #{rem(104)};
+	--sPB: #{rem(124)};
+	--sTPB: #{rem(30)};
+
+	&__row {
+    // margin-left: rem(2);
+    // margin-right: rem(8);
+    background: $white;
+    border-radius: rem(30);
+		--bs-gutter-x: #{rem(0)};
+		// --bs-gutter-y: #{rem()};
+	}
+
+  .container {
+    position: relative;
+  }
+
+	.section-title{
+    @include media-breakpoint-up(md) {
+		max-width: calc(100% - 180px);
+    }
+    @include media-breakpoint-up(xl) {
+      max-width: rem(1000);
+    }
+	}
+  h2 {
+    display: flex;
+  }
+  .column {
+    position: absolute;
+    right: rem(-40);
+    top: 15%;
+    z-index: -1;
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+    display: none;
+    @include media-breakpoint-up(lg) {
+      right: rem(-40);
+      top: rem(-58);
+    }
+  }
+
+	&__col {
+    &:last-child .feature-item {
+      @include media-breakpoint-up(lg) {
+      .icon {
+        transform: translateY(-10px);
+      }
+      justify-content: center;
+      padding-bottom: rem(4);
+      padding-top: rem(24);
+      }
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #bebebe;
+    }
+
+    &:nth-child(1) .feature-item,
+    &:nth-child(2) .feature-item {
+      @include media-breakpoint-up(lg) {
+        padding-top: rem(36);
+      }
+    }
+    &:nth-child(2) .feature-item,
+    &:nth-child(4) .feature-item {
+      @include media-breakpoint-up(lg) {
+        margin-left: rem(4);
+      }
+    }
+    &:nth-child(1), &:nth-child(3) {
+      .feature-item {
+        @include media-breakpoint-up(lg) {
+          border-right: 1px solid #bebebe;
+          .icon {
+            margin-left: rem(16);
+          }
+        }
+      }
+    }
+	}
+	&__item{
+		
+	}
+  
+  .icon-arrow-down {
+    flex-shrink: 0;
+    margin-right: rem(28);
+    transform: translateY(6px);
+  }
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sFeatures
+
+.feature-item {
+  display: flex;
+  gap: rem(10);
+  padding: rem(14);
+  padding-right: rem(20);
+  height: 100%;
+	@include media-breakpoint-down(lg) {
+    align-items: center;
+  }
+
+  .icon {
+    flex-shrink: 0;
+    fill: $primary;
+  }
+
+  &__text {
+    font-weight: 500;
+    font-size: rem(18);
+    line-height: 100%;
+  }
+
+}
