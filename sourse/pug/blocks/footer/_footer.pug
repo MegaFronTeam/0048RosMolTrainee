@@ -2,11 +2,11 @@ mixin footer()
 	+b.FOOTER.footer.section
 		.container
 			+e.row.row
-				+e.col.col-12.col-lg
+				+e.col.col-12.col-lg-4
 					+e.logo(href='/'): +img('img/svg/logo_big.svg')
 					+e.link(href='#') Политика конфиденциальности
 					+e.link(href='#') Согласие на обработку данных
-				.col-sm.mb-20
+				.col-sm.mb-20.col-lg-3
 					//- h5 Навигация
 					+mnu()
 				+e.social-col.col-sm.mb-20

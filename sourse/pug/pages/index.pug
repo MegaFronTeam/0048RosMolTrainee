@@ -10,6 +10,9 @@ include ../blocks/sForWhom/_sForWhom.pug
 include ../blocks/sFAQ/_sFAQ.pug
 include ../blocks/sPartners/_sPartners.pug
 include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sApply/_sApply.pug
+include ../blocks/sSteps/_sSteps.pug
+include ../blocks/sFeatures/_sFeatures.pug
 
 block variables
 	- let  mainPage= 'main-page' 
@@ -28,5 +31,12 @@ block pagecontent
 		+sForWhom()
 		+sFAQ()
 		+sPartners
+		+sContact()
+		+sSteps()
+		+sApply()
+		+sFeatures()
+
+
+
 		+sContact()
 	+parts('footer')

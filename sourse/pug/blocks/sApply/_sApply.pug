@@ -1,0 +1,23 @@
+mixin sApply(data)
+	// start sApply
+	+b.SECTION.sApply.section#sApply&attributes(attributes)
+		.container
+			.pattern(style="background-image: url('../img/svg/business-black.svg')")
+			.pattern-vertical(style="background-image: url('../img/svg/business-black-vert.svg')")
+			+img('img/svg/star.svg').star
+			+e.row.row
+				+e.col.col-12.col-lg-8
+					+b.section-title
+						h2
+							+icon('arrow-down')
+							| Как подать заявку?
+					ul
+						li Зарегистрироваться на платформе Росмолодёжь.Бизнес
+						li Подать заявку на участие в одну из двух категорий
+						li Получить одобрение заявки и в паре «наставник-наставляемый», приступить к прохождению курса и выполнению заданий
+					+e.btn.btn.btn-dark(href='#') Подать заявку
+				+e.col.col-12.col-lg-4
+					+e.img-wrap
+						+img('img/sApply-img.png').bg-picture
+
+	// end sApply

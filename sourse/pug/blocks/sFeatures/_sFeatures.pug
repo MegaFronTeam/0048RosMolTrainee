@@ -1,0 +1,26 @@
+mixin sFeatures(data)
+	// start sFeatures
+	+b.SECTION.sFeatures.section#sFeatures&attributes(attributes)
+		.container
+			+img('img/svg/column-short.svg').column
+			+b.section-title
+				h2
+					+icon('arrow-down')
+					| Бесплатная программа под руководством опытных кураторов
+			+e.row.row
+				+e.col.col-12.col-lg-6
+					+featureItem('Участие финалистов в очном мероприятии в Москве с топовыми спикерами, где в рамках встреч и личного общения можно получить рекомендации от профессионалов бизнеса')
+				+e.col.col-12.col-lg-6
+					+featureItem('Формат, совмещающий акселератор, конкурс, обучающие модули')
+				+e.col.col-12.col-lg-6
+					+featureItem('Формирование федерального пула сертифицированных бизнес-наставников')
+				+e.col.col-12.col-lg-6
+					+featureItem('Формирование долгосрочной программы развития бизнес-наставничества в каждом регионе')
+				+e.col.col-12
+					+featureItem('Проведение метрик-замеров на каждом этапе и оценка роста бизнеса')
+	// end sFeatures
+
+mixin featureItem(text)
+	+b.feature-item
+		+icon('flash')
+		+e.text= text
