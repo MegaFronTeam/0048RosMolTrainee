@@ -1,38 +1,36 @@
 {
-	"nav":[
-		{ "name":"О проекте", "url":"#"},
-		{	"name":"Участникам", "url":"#"},
-		{"name":"Этапы", "url":"#"},
-		{"name":"Истории успеха", "url":"#"} ,
+	"nav": [
+		{"name": "О проекте", "url": "#sForWhom"},
+		{"name": "Участникам", "url": "#sForWhom"},
+		{"name": "Этапы", "url": "#sSteps"},
+		{"name": "Истории успеха", "url": "#sSuccessTales"},
 		{
-			"name":"Вопросы", 
-			"url":"#"
-			},
-      {
-        "name":"Контакты", 
-        "url":"#"
-        }
+			"name": "Вопросы",
+			"url": "#sFAQ"
+		},
+		{
+			"name": "Контакты",
+			"url": "#sContact"
+		}
 	],
-	"social":[
-		"fb","instagram","telegram"
-	],
-	"index":{
+	"social": ["fb", "instagram", "telegram"],
+	"index": {
 		"head": {
 			"title": "Главная"
 		}
 	},
 	"items": [
-			{
+		{
 			"title": "заловок",
 			"text": "текст"
 		},
-			{
+		{
 			"title": "заловок 22",
 			"text": "текст"
 		},
-			{
+		{
 			"title": "заловок 33",
 			"text": "текст"
-			}
-		]
-	}
+		}
+	]
+}

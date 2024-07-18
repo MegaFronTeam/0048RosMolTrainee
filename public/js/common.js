@@ -61,17 +61,22 @@ function eventHandler() {
 		freeModeMomentum: true,
 	});
 
-  
 	const swiperStages = new Swiper(".sSteps__slider--js", {
 		// slidesPerView: 5,
 		// ...defaultSl,
 		slidesPerView: "auto",
 		// freeMode: true,
 		freeModeMomentum: true,
-		watchOverflow: true
+		watchOverflow: true,
 	});
 
-	
+	const swipersSuccessTales = new Swiper(".sSuccessTales__swiper--js", {
+		slidesPerView: "auto",
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+	});
 }
 if (document.readyState !== "loading") {
 	eventHandler();

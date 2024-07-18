@@ -1,0 +1,161 @@
+// start .sSuccessTales
+.sSuccessTales {
+	--sPT: #{rem(54)};
+	--sPB: #{rem(90)};
+	--sTPB: #{rem(21)};
+
+	background-image: linear-gradient(153deg, #20201c, #e3aa11),
+		linear-gradient(90deg, #ffcd00, transparent);
+	position: relative;
+	&:after {
+		content: "";
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: rem(87.897);
+		left: 0;
+		bottom: 0;
+		// z-index: -1;
+
+		background-image: url("data:image/svg+xml,%3Csvg width='106' height='78' viewBox='0 0 106 78' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_2002_21)'%3E%3Cpath d='M104.99 77.69H37.28L35.78 76.19V19.91L37.28 18.41H85.64L87.14 19.91V57.55L85.64 59.05H55.45L53.95 57.55V38.56L55.45 37.06H70.3C71.13 37.06 71.8 37.73 71.8 38.56C71.8 39.39 71.13 40.06 70.3 40.06H56.95V56.05H84.14V21.41H38.78V74.69H103.49V3H20.39V76.19L18.89 77.69H-2.5C-3.33 77.69 -4 77.02 -4 76.19C-4 75.36 -3.33 74.69 -2.5 74.69H17.39V1.5L18.89 0H104.99L106 1.5V76V77.69H104.99Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_2002_21'%3E%3Crect width='106' height='78' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+		background-repeat: repeat;
+		background-size: contain;
+		background-position: center;
+	}
+	@include media-breakpoint-up(lg) {
+		--sPT: #{rem(108)};
+		--sPB: #{rem(180)};
+		--sTPB: #{rem(62)};
+	}
+	&__container {
+		position: relative;
+		z-index: 1;
+		.bg {
+			position: absolute;
+			right: rem(-116);
+			top: rem(41);
+			z-index: -1;
+		}
+		&:after {
+			content: "";
+			position: absolute;
+			display: block;
+			width: rem(435);
+			height: rem(435);
+			border-radius: 50%;
+			border: 2px solid #fff;
+			right: rem(-414);
+			top: rem(157);
+			z-index: -1;
+		}
+	}
+	.section-title {
+		color: #fff;
+	}
+	&__row {
+		color: #fff;
+		margin-left: rem(37);
+		margin-top: rem(12);
+		.row {
+			--bs-gutter-x: #{rem(72)};
+			--bs-gutter-y: #{rem(18)};
+
+			align-items: center;
+		}
+		.h3 {
+			margin-bottom: rem(19);
+		}
+		p {
+			margin-bottom: rem(25);
+			font-weight: 400;
+			line-height: 1.1;
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+	&__content {
+		position: relative;
+		max-width: rem(605);
+		padding-bottom: rem(58);
+		margin-bottom: rem(20);
+		@include media-breakpoint-up(lg) {
+			padding-bottom: rem(40);
+			margin-bottom: 0;
+		}
+	}
+	&__arrow-wrap {
+		position: absolute;
+		bottom: rem(20);
+		left: 0;
+		z-index: 100;
+		@include media-breakpoint-up(lg) {
+			left: rem(500);
+			bottom: 0;
+		}
+	}
+	.swiper-button-hand {
+		--swiperArrowSize: #{rem(36)};
+
+		position: static;
+		display: inline-flex;
+		margin-top: rem(25);
+		background-color: transparent;
+		border: none;
+		color: #fff;
+		@include media-breakpoint-up(lg) {
+			margin-top: rem(50);
+		}
+		&-next {
+			margin-left: rem(35);
+		}
+		&:hover {
+			color: $primary;
+		}
+		.icon {
+			stroke: currentColor;
+		}
+	}
+	&__img {
+		@include block(1, 1);
+		// overflow: hidden;
+		object-position: top;
+		max-width: rem(394);
+		@include media-breakpoint-up(lg) {
+			min-width: rem(394);
+		}
+		img {
+			border-radius: 50%;
+		}
+		&:before {
+			content: "";
+			position: absolute;
+			display: block;
+			aspect-ratio: 1;
+			width: calc(100% - rem(60));
+			border-radius: 50%;
+			border: 1px solid #fff;
+			top: rem(-10.6);
+			left: rem(-34.6);
+		}
+	}
+	.swiper {
+		@include media-breakpoint-down(sm) {
+			overflow: visible;
+		}
+	}
+	@include media-breakpoint-up(xl) {
+	}
+	@include media-breakpoint-up(lg) {
+	}
+	@include media-breakpoint-up(md) {
+	}
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
+} // end.sSuccessTales

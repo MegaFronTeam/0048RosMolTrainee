@@ -1,0 +1,27 @@
+mixin sSuccessTales(data)
+	// start sSuccessTales
+	+b.SECTION.sSuccessTales.section#sSuccessTales&attributes(attributes)
+		+e.container.container
+			+img('img/sSuccessTales-bg-1.png').bg
+			+b.section-title
+				h2
+					+icon('arrow-down')
+					| Истории успеха выпускников проекта
+			+e.swiper--js.swiper
+				+e.arrow-wrap
+					+arrow
+				.swiper-wrapper
+					-for(let i = 0; i < 3; i++)
+						.swiper-slide
+							+e.row
+								.row
+									.col-lg-auto
+										+e.img: .img-wrap-center: +img('img/sSuccessTales-img-1.jpg', 'bg')
+									.col-lg
+										+e.content
+											.h3 Анастасия Комарова
+											p Победитель конкурса «Битва наставников», лучший выпускник «Мастерской наставников» 2023
+											p Основатель маркетингового агентства Cleverra. Участие в конкурсе дало дальнейшее развитие в качестве наставника и спикера мероприятий Росмолодёжь.Бизнес. После конкурса стала экспертом в акселерационной программе РАНХиГС, содействовала в развитии молодых предпринимателей в рамках стартап-школы «Бизнес 07» на территории КБР, а также является наставником в других проектах Росмолодёжь.Бизнес.
+										
+
+	// end sSuccessTales
