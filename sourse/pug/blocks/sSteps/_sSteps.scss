@@ -94,6 +94,7 @@
 
   .swiper-slide {
     width: auto;
+    max-width: 110vw;
     &:not(:last-child) {
       .stage-slide {
 
@@ -101,7 +102,7 @@
           content: '';
           position: absolute;
           top: rem(292);
-          left: rem(180);
+          left: 50%;
           width: calc(100% + rem(68));
           height: rem(2);
           background: $black;
