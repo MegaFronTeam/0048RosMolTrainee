@@ -10,7 +10,9 @@ mixin sSteps(data)
 				h2
 					+icon('arrow-down')
 					| Этапы
-			+img('img/svg/mouse.svg').mouse
+			+e.wrap
+				+img('img/svg/mouse.svg').mouse
+				.arrow-wrap: +arrow
 			+e.slider--js.swiper
 				.swiper-wrapper
 					+stageSlide('Приём заявок', '4 июля – 4 августа', 'computer', 'Онлайн', '1')

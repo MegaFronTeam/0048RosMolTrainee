@@ -15,8 +15,6 @@
   }
 
   .mouse {
-    margin-left: rem(130);
-    margin-bottom: rem(30);
   }
 
   .star {
@@ -57,6 +55,41 @@
     margin-right: rem(28);
     transform: translateY(-6px);
   }
+
+  &__wrap {
+    position: relative;
+    z-index: 1;
+
+    margin-bottom: rem(30);
+    display: flex;
+    justify-content: space-between;
+		@include media-breakpoint-up(md) {
+      margin-left: rem(130);
+    }
+  }
+
+  .swiper-button-hand {
+		--swiperArrowSize: #{rem(36)};
+
+		position: static;
+		display: inline-flex;
+		margin-top: rem(25);
+		background-color: transparent;
+		border: none;
+		color: $black;
+		@include media-breakpoint-up(lg) {
+			margin-top: rem(50);
+		}
+		&-next {
+			margin-left: rem(35);
+		}
+		&:hover {
+			color: $white;
+		}
+		.icon {
+			stroke: currentColor;
+		}
+	}
 
   .swiper {
     overflow: visible;

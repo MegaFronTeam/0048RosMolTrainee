@@ -65,6 +65,10 @@ function eventHandler() {
 		// slidesPerView: 5,
 		// ...defaultSl,
 		slidesPerView: "auto",
+		navigation: {
+			nextEl: ".sSteps__wrap .swiper-button-next",
+			prevEl: ".sSteps__wrap .swiper-button-prev",
+		},
 		// freeMode: true,
 		freeModeMomentum: true,
 		watchOverflow: true,
