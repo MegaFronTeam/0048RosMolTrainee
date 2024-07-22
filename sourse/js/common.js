@@ -80,6 +80,7 @@ function eventHandler() {
 			nextEl: ".swiper-button-next",
 			prevEl: ".swiper-button-prev",
 		},
+		spaceBetween: 20,
 	});
 }
 if (document.readyState !== "loading") {
