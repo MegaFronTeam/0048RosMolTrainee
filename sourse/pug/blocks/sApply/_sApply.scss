@@ -1,7 +1,7 @@
 // start .sApply
 .sApply {
 	--sPT: #{rem(32)};
-	--sPB: #{rem(42)};
+	--sPB: #{rem(56)};
 	--sTPB: #{rem(44)};
 	background: $white;
 	&__row{
@@ -11,7 +11,7 @@
 		--bs-gutter-y: #{rem(40)};
 	}
 	.section-title {
-    padding-top: rem(48);
+    padding-top: rem(62);
 	}
 
   .container {
