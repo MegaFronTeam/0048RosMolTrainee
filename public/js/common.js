@@ -66,8 +66,8 @@ function eventHandler() {
 		// ...defaultSl,
 		slidesPerView: "auto",
 		navigation: {
-			nextEl: ".sSteps__wrap .swiper-button-next",
-			prevEl: ".sSteps__wrap .swiper-button-prev",
+			nextEl: ".sSteps .section-title .swiper-button-next",
+			prevEl: ".sSteps .section-title .swiper-button-prev",
 		},
 		// freeMode: true,
 		freeModeMomentum: true,

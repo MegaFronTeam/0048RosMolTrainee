@@ -82,7 +82,7 @@
 	}
 
 	.swiper-button-hand {
-		--swiperArrowSize: #{rem(36)};
+		--swiperArrowSize: #{rem(50.4)};
 
 		position: relative;
 		display: inline-flex;
@@ -92,6 +92,7 @@
 		color: $black;
 		left: unset;
 		right: unset;
+		box-shadow: none;
 		&-next {
 			margin-left: rem(35);
 		}
@@ -107,8 +108,8 @@
 			content: "";
 			position: absolute;
 			display: block;
-			width: calc(100% + rem(42));
-			height: calc(100% + rem(42));
+			width: calc(100% + rem(22));
+			height: calc(100% + rem(22));
 			left: 50%;
 			top: 50%;
 			transform: translate(-50%, -50%);
