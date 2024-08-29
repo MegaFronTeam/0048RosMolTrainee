@@ -1,5 +1,5 @@
 import { a as getWindow, g as getDocument } from './ssr-window.esm.mjs';
-import { a as elementParents, p as elementStyle, e as elementChildren, s as setCSSProperty, f as elementOuterSize, q as elementNextAll, r as elementPrevAll, j as getTranslate, t as animateCSSModeScroll, n as nextTick, u as showWarning, c as createElement, d as now, v as extend, h as elementIndex, w as deleteProps } from './utils.mjs';
+import { a as elementParents, p as elementStyle, e as elementChildren, s as setCSSProperty, f as elementOuterSize, q as elementNextAll, r as elementPrevAll, j as getTranslate, t as animateCSSModeScroll, n as nextTick, u as showWarning, c as createElement, v as elementIsChildOf, d as now, w as extend, h as elementIndex, x as deleteProps } from './utils.mjs';
 
 let support;
 function calcSupport() {
@@ -592,7 +592,7 @@ function updateSlides() {
       allSlidesSize += slideSizeValue + (spaceBetween || 0);
     });
     allSlidesSize -= spaceBetween;
-    const maxSnap = allSlidesSize - swiperSize;
+    const maxSnap = allSlidesSize > swiperSize ? allSlidesSize - swiperSize : 0;
     snapGrid = snapGrid.map(snap => {
       if (snap <= 0) return -offsetBefore;
       if (snap > maxSnap) return maxSnap + offsetAfter;
@@ -1439,8 +1439,11 @@ function slideTo(index, speed, runCallbacks, internal, initial) {
   let direction;
   if (slideIndex > activeIndex) direction = 'next';else if (slideIndex < activeIndex) direction = 'prev';else direction = 'reset';
 
+  // initial virtual
+  const isVirtual = swiper.virtual && swiper.params.virtual.enabled;
+  const isInitialVirtual = isVirtual && initial;
   // Update Index
-  if (rtl && -translate === swiper.translate || !rtl && translate === swiper.translate) {
+  if (!isInitialVirtual && (rtl && -translate === swiper.translate || !rtl && translate === swiper.translate)) {
     swiper.updateActiveIndex(slideIndex);
     // Update Height
     if (params.autoHeight) {
@@ -1460,7 +1463,6 @@ function slideTo(index, speed, runCallbacks, internal, initial) {
     const isH = swiper.isHorizontal();
     const t = rtl ? translate : -translate;
     if (speed === 0) {
-      const isVirtual = swiper.virtual && swiper.params.virtual.enabled;
       if (isVirtual) {
         swiper.wrapperEl.style.scrollSnapType = 'none';
         swiper._immediateVirtual = true;
@@ -2191,7 +2193,7 @@ function onTouchStart(event) {
   }
   let targetEl = e.target;
   if (params.touchEventsTarget === 'wrapper') {
-    if (!swiper.wrapperEl.contains(targetEl)) return;
+    if (!elementIsChildOf(targetEl, swiper.wrapperEl)) return;
   }
   if ('which' in e && e.which === 3) return;
   if ('button' in e && e.button > 0) return;
@@ -2441,7 +2443,7 @@ function onTouchMove(event) {
     resistanceRatio = 0;
   }
   if (diff > 0) {
-    if (isLoop && allowLoopFix && !loopFixed && data.allowThresholdMove && data.currentTranslate > (params.centeredSlides ? swiper.minTranslate() - swiper.slidesSizesGrid[swiper.activeIndex + 1] : swiper.minTranslate())) {
+    if (isLoop && allowLoopFix && !loopFixed && data.allowThresholdMove && data.currentTranslate > (params.centeredSlides ? swiper.minTranslate() - swiper.slidesSizesGrid[swiper.activeIndex + 1] - (params.slidesPerView !== 'auto' && swiper.slides.length - params.slidesPerView >= 2 ? swiper.slidesSizesGrid[swiper.activeIndex + 1] + swiper.params.spaceBetween : 0) - swiper.params.spaceBetween : swiper.minTranslate())) {
       swiper.loopFix({
         direction: 'prev',
         setTranslate: true,
@@ -2455,7 +2457,7 @@ function onTouchMove(event) {
       }
     }
   } else if (diff < 0) {
-    if (isLoop && allowLoopFix && !loopFixed && data.allowThresholdMove && data.currentTranslate < (params.centeredSlides ? swiper.maxTranslate() + swiper.slidesSizesGrid[swiper.slidesSizesGrid.length - 1] : swiper.maxTranslate())) {
+    if (isLoop && allowLoopFix && !loopFixed && data.allowThresholdMove && data.currentTranslate < (params.centeredSlides ? swiper.maxTranslate() + swiper.slidesSizesGrid[swiper.slidesSizesGrid.length - 1] + swiper.params.spaceBetween + (params.slidesPerView !== 'auto' && swiper.slides.length - params.slidesPerView >= 2 ? swiper.slidesSizesGrid[swiper.slidesSizesGrid.length - 1] + swiper.params.spaceBetween : 0) : swiper.maxTranslate())) {
       swiper.loopFix({
         direction: 'next',
         setTranslate: true,
